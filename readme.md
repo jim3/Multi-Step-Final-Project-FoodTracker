@@ -15,4 +15,4 @@ the code (the `index.js` file) is written by the students of the course. I've op
 
 **End Result**
 
-![Food Tracker App]()
+![Food Tracker App](https://github.com/jim3/Multi-Step-Final-Project-FoodTracker/blob/main/final-project.gif)
