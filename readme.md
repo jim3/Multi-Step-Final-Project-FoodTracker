@@ -11,7 +11,9 @@ building on the previous step. HTML, CSS, and JavaScript are used and no framewo
 is the first step of the project. I will try and update the README as I add more steps to the project but don't hold me
 to it. 😅 I provided the initial boilerplate code for the project for those that are interested. But the rest of
 the code (the `index.js` file) is written by the students of the course. I've opted to _not_ use the
-`fetch-wrapper.js` for better or worse, mainly because I wanted to see how everything works without it.
+`fetch-wrapper.js` for better or worse, mainly because I wanted to see how everything works without it. And no rush
+on this project, it's for learning only.
+
 
 **End Result**
 
