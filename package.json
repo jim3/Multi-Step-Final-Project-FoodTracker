@@ -1,0 +1,17 @@
+{
+    "name": "multi-step.final.project.food.tracker",
+    "version": "1.0.0",
+    "description": "This is a multi-step final project for a Food Tracker app.",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "keywords": [
+        "client-side javascript",
+        "DOM manipulation",
+        "html",
+        "css"
+    ],
+    "author": "Jad Joubran @ https://github.com/jadjoubran",
+    "license": "IDK"
+}
