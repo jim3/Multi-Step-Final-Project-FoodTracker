@@ -15,4 +15,4 @@ the code (the `index.js` file) is written by the students of the course. I've op
 
 **End Result**
 
-![Food Tracker App](https://user-images.githubusercontent.com/11630112/230420342-835f8009-9ee2-4170-b290-616aa6350f37.mp4)
+![Food Tracker App]()
