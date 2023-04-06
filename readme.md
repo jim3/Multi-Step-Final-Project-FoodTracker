@@ -15,8 +15,4 @@ the code (the `index.js` file) is written by the students of the course. I've op
 
 **End Result**
 
-Insert video here using markdown
-
-
-
-<!-- ![Alt text](https://res.cloudinary.com/dbfn5lnvx/video/upload/q_auto,w_1000/v1627463675/learnjavascript/final-project/final-project.mp4 "a title") -->
+![Food Tracker App](https://user-images.githubusercontent.com/11630112/230420342-835f8009-9ee2-4170-b290-616aa6350f37.mp4)
