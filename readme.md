@@ -14,7 +14,8 @@ I included the initial boilerplate code for the project for those that are inter
 the code (the `index.js` file) is written by the students of the course. I've opted to _not_ use the
 `fetch-wrapper.js` for better or worse, mainly because I wanted to see how everything works without it. 
 
-(*) And, new level of respect for JavaScript developers! Especially for those that use "Vanilla JavaScript" heavily! 🙇🏻‍♂️ 😅
+(*) Note: I know have a new level of respect for front-end JavaScript developers!!! 🙇🏻‍♂️🧙🏻‍ 😅
+
 
 
 **End Result**
