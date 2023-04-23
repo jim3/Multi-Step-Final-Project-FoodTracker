@@ -12,7 +12,8 @@ is the first step of the project. I will *try* and update the README as I add mo
 
 I included the initial boilerplate code for the project for those that are interested. The rest of
 the code (the `index.js` file) is written by the students of the course. I've opted to _not_ use the
-`fetch-wrapper.js` for better or worse, mainly because I wanted to see how everything works without it. 
+`fetch-wrapper.js` for better or worse, mainly because I wanted to see how everything works without it. No hurry
+on this project..still a ways to go.
 
 (*) Note: I know have a new level of respect for front-end JavaScript developers!!! 🙇🏻‍♂️🧙🏻‍ 😅
 
