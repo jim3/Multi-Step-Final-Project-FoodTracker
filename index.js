@@ -1,3 +1,6 @@
+import { capitalize } from "./helpers.js";
+import { calculateCalories } from "./helpers.js";
+
 const namespace = "ec53jim3"; // ec53jim3
 const baseURL = `https://firestore.googleapis.com/v1/projects/jsdemo-3f387/databases/(default)/documents/`;
 const url = `${baseURL}${namespace}`;
@@ -18,7 +21,6 @@ form.addEventListener("submit", async (e) => {
             fat: { integerValue: fat.value },
         },
     };
-    console.log(data);
 
     // POST request options: send POST request, HTTP header & json as a string to server
     const options = {
@@ -56,8 +58,23 @@ form.addEventListener("submit", async (e) => {
     const proteinElement = foodList.querySelector(".protein .value");
     const fatElement = foodList.querySelector(".fat .value");
 
-    nameElement.textContent = responseData.fields.name.stringValue;
+    // capitalize the first letter of the name of the food
+    nameElement.textContent = capitalize(responseData.fields.name.stringValue);
+
+    // display the values of carbs, protein, and fat
     carbsElement.textContent = `${responseData.fields.carbs.integerValue}g`;
     proteinElement.textContent = `${responseData.fields.protein.integerValue}g`;
     fatElement.textContent = `${responseData.fields.fat.integerValue}g`;
+
+    // get the values of carbs, protein, and fat
+    const carbsValue = carbsElement.textContent;
+    const proteinValue = proteinElement.textContent;
+    const fatValue = fatElement.textContent;
+
+    // convert the string to a number using `parseFloat()` method and calculate the total calories
+    let totalCalories = calculateCalories(carbsValue, proteinValue, fatValue);
+
+    // display the total calories in the DOM using `textContent` property
+    const caloriesElement = foodList.querySelector(".calories");
+    caloriesElement.textContent = `${totalCalories} calories`;
 });
