@@ -1,10 +1,14 @@
+import snackbar from "./snackbar.js";
 import { capitalize } from "./helpers.js";
 import { calculateCalories } from "./helpers.js";
+// import snackbar from "./snackbar";
 
 const namespace = "ec53jim3"; // ec53jim3
 const baseURL = `https://firestore.googleapis.com/v1/projects/jsdemo-3f387/databases/(default)/documents/`;
 const url = `${baseURL}${namespace}`;
 const form = document.querySelector("#create-form");
+
+snackbar.show("Food added successfully.")
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -31,6 +35,12 @@ form.addEventListener("submit", async (e) => {
 
     const response = await fetch(url, options); // get response from server
     const responseData = await response.json(); // convert response to json using json() method
+
+    if (responseData) {
+        snackbar.show("Food added successfully!");
+    } else {
+        snackbar.show("Some data is missing!");
+    }
 
     if (!responseData.error) {
         document.getElementById("create-form").reset();
