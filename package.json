@@ -13,5 +13,8 @@
         "css"
     ],
     "author": "Jad Joubran @ https://github.com/jadjoubran",
-    "license": "IDK"
+    "license": "IDK",
+    "dependencies": {
+        "snackbar": "^1.1.0"
+    }
 }
