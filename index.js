@@ -1,4 +1,4 @@
-import snackbar from "./snackbar.js";
+// import snackbar from "./snackbar.js";
 import { capitalize } from "./helpers.js";
 import { calculateCalories } from "./helpers.js";
 // import snackbar from "./snackbar";
@@ -7,8 +7,8 @@ const namespace = "ec53jim3"; // ec53jim3
 const baseURL = `https://firestore.googleapis.com/v1/projects/jsdemo-3f387/databases/(default)/documents/`;
 const url = `${baseURL}${namespace}`;
 const form = document.querySelector("#create-form");
-
-snackbar.show("Food added successfully.")
+const list = document.querySelector("#food-list");
+// snackbar.show("Food added successfully.");
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -36,55 +36,76 @@ form.addEventListener("submit", async (e) => {
     const response = await fetch(url, options); // get response from server
     const responseData = await response.json(); // convert response to json using json() method
 
-    if (responseData) {
-        snackbar.show("Food added successfully!");
-    } else {
-        snackbar.show("Some data is missing!");
-    }
+    // if (responseData) {
+    //     snackbar.show("Food added successfully!");
+    // } else {
+    //     snackbar.show("Some data is missing!");
+    // }
 
     if (!responseData.error) {
         document.getElementById("create-form").reset();
     }
 
-    const insertHTML = `
-    <li class="card">
-    <div>
-    <h3 class="name">NAME</h3>
-    <div class="calories">0 calories</div>
-    <ul class="macros">
-      <li class="carbs"><div>Carbs</div><div class="value">CARBSg</div></li>
-      <li class="protein"><div>Protein</div><div class="value">PROTEINg</div></li>
-      <li class="fat"><div>Fat</div><div class="value">FATg</div></li>
-    </ul>
-    </div>
-    </li>
-`;
+    //     const insertHTML = `
+    //     <li class="card">
+    //     <div>
+    //     <h3 class="name">NAME</h3>
+    //     <div class="calories">0 calories</div>
+    //     <ul class="macros">
+    //       <li class="carbs"><div>Carbs</div><div class="value">CARBSg</div></li>
+    //       <li class="protein"><div>Protein</div><div class="value">PROTEINg</div></li>
+    //       <li class="fat"><div>Fat</div><div class="value">FATg</div></li>
+    //     </ul>
+    //     </div>
+    //     </li>
+    // `;
 
-    const foodList = document.querySelector("#food-list");
-    foodList.insertAdjacentHTML("beforeend", insertHTML);
+    list.insertAdjacentHTML(
+        "beforeend",
+        `<li class="card">
+      <div>
+        <h3 class="name">${capitalize(name.value)}</h3>
+        <div class="calories">${calculateCalories(
+            carbs.value,
+            protein.value,
+            fat.value
+        )} calories</div>
+        <ul class="macros">
+          <li class="carbs"><div>Carbs</div><div class="value">${carbs.value}g</div></li>
+          <li class="protein"><div>Protein</div><div class="value">${
+              protein.value
+          }g</div></li>
+          <li class="fat"><div>Fat</div><div class="value">${fat.value}g</div></li>
+        </ul>
+      </div>
+    </li>`
+    );
 
-    const nameElement = foodList.querySelector(".name");
-    const carbsElement = foodList.querySelector(".carbs .value");
-    const proteinElement = foodList.querySelector(".protein .value");
-    const fatElement = foodList.querySelector(".fat .value");
+    // const foodList = document.querySelector("#food-list");
+    // foodList.insertAdjacentHTML("beforeend", insertHTML);
 
-    // capitalize the first letter of the name of the food
-    nameElement.textContent = capitalize(responseData.fields.name.stringValue);
+    // const nameElement = foodList.querySelector(".name");
+    // const carbsElement = foodList.querySelector(".carbs .value");
+    // const proteinElement = foodList.querySelector(".protein .value");
+    // const fatElement = foodList.querySelector(".fat .value");
 
-    // display the values of carbs, protein, and fat
-    carbsElement.textContent = `${responseData.fields.carbs.integerValue}g`;
-    proteinElement.textContent = `${responseData.fields.protein.integerValue}g`;
-    fatElement.textContent = `${responseData.fields.fat.integerValue}g`;
+    // // capitalize the first letter of the name of the food
+    // nameElement.textContent = capitalize(responseData.fields.name.stringValue);
 
-    // get the values of carbs, protein, and fat
-    const carbsValue = carbsElement.textContent;
-    const proteinValue = proteinElement.textContent;
-    const fatValue = fatElement.textContent;
+    // // display the values of carbs, protein, and fat
+    // carbsElement.textContent = `${responseData.fields.carbs.integerValue}g`;
+    // proteinElement.textContent = `${responseData.fields.protein.integerValue}g`;
+    // fatElement.textContent = `${responseData.fields.fat.integerValue}g`;
 
-    // convert the string to a number using `parseFloat()` method and calculate the total calories
-    let totalCalories = calculateCalories(carbsValue, proteinValue, fatValue);
+    // // get the values of carbs, protein, and fat
+    // const carbsValue = carbsElement.textContent;
+    // const proteinValue = proteinElement.textContent;
+    // const fatValue = fatElement.textContent;
 
-    // display the total calories in the DOM using `textContent` property
-    const caloriesElement = foodList.querySelector(".calories");
-    caloriesElement.textContent = `${totalCalories} calories`;
+    // // convert the string to a number using `parseFloat()` method and calculate the total calories
+    // let totalCalories = calculateCalories(carbsValue, proteinValue, fatValue);
+
+    // // display the total calories in the DOM using `textContent` property
+    // const caloriesElement = foodList.querySelector(".calories");
+    // caloriesElement.textContent = `${totalCalories} calories`;
 });
