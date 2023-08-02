@@ -15,10 +15,6 @@ the code (the `index.js` file) is written by the students of the course. I've op
 `fetch-wrapper.js` for better or worse, mainly because I wanted to see how everything works without it. No hurry
 on this project..still a ways to go.
 
-(*) Note: I now have a new level of respect for front-end JavaScript developers!!! 🙇🏻‍♂️🧙🏻‍ 😅
-
-
-
 **End Result**
 
 ![Food Tracker App](https://github.com/jim3/Multi-Step-Final-Project-FoodTracker/blob/main/final-project.gif)
